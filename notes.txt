@@ -1,0 +1,7 @@
+{%for i in movies%}
+  <h1>{{i.title}}</h1>
+  {%for y in i.genre.all%}
+    {{y}}
+
+  {%endfor%}
+{%endfor%}

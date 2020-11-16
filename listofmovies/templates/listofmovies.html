@@ -1,4 +1,39 @@
 {%extends 'base.html'%}
-{%block content%}
-<h1>List of movies</h1>
+  {%load static%}
+  {%block extra_head%}
+    <link rel="stylesheet" href="{%static 'css/style.css'%}">
+  {%endblock%}
+  {%block content%}
+
+  <h4>Top Rated Movies</h4>
+
+
+  <div class="container">
+
+    <table>
+      <th id="nick">Title&Rank</th>
+      <th>Release</th>
+      <th>Genre</th>
+
+      {%for i in movies%}
+        {%for y in i.genre.all%}
+      <tbody>
+        <tr>
+          <td>
+            <img id="tit" src="{{i.poster.url}}" alt="" width="110" height="150"/><a href="#">{{i.title}}</a>
+          </td>
+          <td class="items">{{i.release}}</td>
+          <td class="items">{{y}}</td>
+        </tr>
+
+      </tbody>
+      {%endfor%}
+    {%endfor%}
+    </table>
+
+  </div>
+
+
+
+
 {%endblock%}

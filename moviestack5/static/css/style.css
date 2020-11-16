@@ -1,15 +1,58 @@
 #brand_color {
-  color: #7952b3
+  color: #7952b3;
+  font-size: 20px;
+  /* padding-left: 5px; */
 }
+
 h2 {
   color: #34a87d;
 }
+
 #btn {
-        margin: 10px 210px;
+  margin: 10px 210px;
 }
+
 .btn_div {
   margin: 250px 513px;
 }
+
 #qwe {
   font-size: 25px;
+}
+
+#tit {
+  margin: 30px 45px;
+}
+
+table {
+  width: 800px;
+  border-spacing: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #f6f6f5;
+}
+
+td {
+  padding: 10px;
+  text-align: left;
+}
+
+#nick {
+  padding-left: 45px;
+}
+
+h4 {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  color: #f6f6f5;
+}
+
+body {
+  background-color: #010101
+}
+
+#logo {
+  padding-right: 10px;
 }

@@ -1,4 +1,6 @@
 from django.db import models
+from django.conf import settings
+
 
 
 class Genre(models.Model):
@@ -13,10 +15,10 @@ class Movie(models.Model):
 
     title = models.CharField(max_length=200)
     release = models.IntegerField(default=0)
-    poster = models.ImageField(upload_to='')
+    poster = models.ImageField(upload_to='listofmovies/')
     company = models.CharField(max_length=200, help_text='Enter a company of movie')
     language = models.CharField(max_length=200, help_text='Choose a language of the movie')
-    genre = models.ManyToManyField(Genre, help_text='Choose a genre of the movie')
+    genre = models.ManyToManyField(Genre, help_text='Choose a genre of the movie', null=True, blank=True)
     director = models.ForeignKey('Director', on_delete=models.SET_NULL, null=True)
 
     rating_list = (

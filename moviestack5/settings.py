@@ -32,7 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'listofmovies',
+    'listofmovies.apps.ListofmoviesConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -77,15 +77,10 @@ WSGI_APPLICATION = 'moviestack5.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'moviestack5db',
-        'USER': 'postgres',
-        'PASSWORD': '5247942',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
