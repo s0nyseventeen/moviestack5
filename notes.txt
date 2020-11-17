@@ -1,7 +1,6 @@
-{%for i in movies%}
-  <h1>{{i.title}}</h1>
-  {%for y in i.genre.all%}
-    {{y}}
-
-  {%endfor%}
-{%endfor%}
+1. Photo gallery(movie_detail)
+2. Trailer
+3. Different apps
+4. Genre field in models
+5. Comments(movie_detail)
+6. Big photo

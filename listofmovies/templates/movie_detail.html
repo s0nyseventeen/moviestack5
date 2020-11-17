@@ -12,11 +12,42 @@
       body {
         background-color: #c2c2be;
       }
+      div {
+        margin-top: 2px;
+        text-align: center;
+      }
+      .container {
+        width: auto;
+        background: #eeeeee;
+      }
+      .first {
+        height: auto;
+        background-color: #eeeeee;
+        text-align: left;
+        width: auto;
+        float: left;
+      }
+      .third {
+        width: auto;
+        background: #eeeeee;
+        height: 250px;
+        float: left;
+        text-align: left;
+      }
+      .clear {
+        clear: both;
+      }
+      h4 {
+        text-align: left;
+      }
+      p {
+        padding-top: 3px;
+        text-align: left;
+      }
     </style>
     <title>Hello, world!</title>
   </head>
   <body>
-
     <nav class="navbar navbar-expand-md navbar-light bg-dark">
       <a class="navbar-brand" href="#">
         <img src="{%static 'video-camera.png'%}" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
@@ -30,16 +61,11 @@
                   <a class="dropdown-item" href="#">Genre</a>
                   <a class="dropdown-item" href="#">Year</a>
                   <a class="dropdown-item" href="#">Rating</a>
-                  <!-- <a class="dropdown-item" href="#">Category4</a>
-                  <a class="dropdown-item" href="#">Category5</a> -->
-
                 </div>
               </li>
               <li class="nav-item"><a class="nav-link text-light text-uppercase font-weigth-bold px-3" href="#">Contacts</a></li>
               <li class="nav-item"><a class="nav-link text-light text-uppercase font-weigth-bold px-3" href="{%url 'listofmovies'%}">Top rated movies</a></li>
-
             </ul>
-
             <form class="form-inline" action="index.html" method="post">
               <div class="input-group">
                 <input type="text" placeholder="Search" value="">
@@ -51,21 +77,62 @@
           </div>
         </nav>
 
-    <div class="container">
-      <div class="w-100 p-3" style="background-color: #eee;">
-        <div class="">
-          <img src="{{movie.poster.url}}" alt="">
+        <div class="container">
+          <h4>{{movie.title}}</h4>
+
+          <div class="first">
+            <img src="{{movie.poster.url}}" alt="">
+            <img src="{%static 'fast2.jpg'%}" alt="">
+          </div>
+          <div class="clear"></div>
+          <!-- <hr> -->
+          <!-- <p>
+          Director: {{movie.director}}
+          <br>
+          Language: {{movie.language}}
+          <br>
+          Company: {{movie.company}}
+          <br>
+          Release: {{movie.release}}
+          <br>Genre:
+          {% for i in movie_genre.all%}
+            {% for y in i.genre.all%}
+              {{y}}
+            {% endfor %}
+          {% endfor %}
+          </p> -->
+          <hr>
+          <!-- <p>
+            {{movie.description}}
+          </p> -->
+
+          <div class="third">
+            <p>
+            Director: {{movie.director}}
+            <br>
+            Language: {{movie.language}}
+            <br>
+            Company: {{movie.company}}
+            <br>
+            Release: {{movie.release}}
+            <br>Genre:
+            {% for i in movie_genre.all%}
+              {% for y in i.genre.all%}
+                {{y}}
+              {% endfor %}
+            {% endfor %}
+            </p>
+            <hr>
+            <h4>Story</h4>
+            {{movie.description}}
+          </div>
+          <div class="clear"></div>
         </div>
-
-      </div>
-    </div>
-
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
   </body>
 </html>
