@@ -5,10 +5,13 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{{movie.title}}</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{%static '/css/style.css'%}">
     <style media="screen">
+
       body {
         background-color: #c2c2be;
       }
@@ -20,38 +23,17 @@
         width: auto;
         background: #eeeeee;
       }
-      .first {
-        height: auto;
-        background-color: #eeeeee;
-        text-align: left;
-        width: auto;
-        float: left;
-      }
-      .third {
-        width: auto;
-        background: #eeeeee;
-        height: 250px;
-        float: left;
-        text-align: left;
-      }
-      .clear {
-        clear: both;
-      }
-      h4 {
-        text-align: left;
-      }
-      p {
-        padding-top: 3px;
-        text-align: left;
-      }
+
     </style>
-    <title>Hello, world!</title>
+
   </head>
+
   <body>
+
     <nav class="navbar navbar-expand-md navbar-light bg-dark">
       <a class="navbar-brand" href="#">
         <img src="{%static 'video-camera.png'%}" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
-      <a id="brand_color" href="{%url 'homepage'%}"><strong>movieStack</strong></a>
+      <a id="logo_color" href="{%url 'homepage'%}"><strong>movieStack</strong></a>
       </a>
       <button class="navbar-toggler bg-light" data-toggle='collapse' data-targer='#navbar' type="button" name="button"><span class="navbar-toggler-icon"></span></button>
           <div id="navbar" class="collapse navbar-collapse justify-content-between">
@@ -78,36 +60,15 @@
         </nav>
 
         <div class="container">
-          <h4>{{movie.title}}</h4>
-
+          <h4 class="h4_movie_detail">{{movie.title}}</h4>
           <div class="first">
             <img src="{{movie.poster.url}}" alt="">
             <img src="{%static 'fast2.jpg'%}" alt="">
           </div>
           <div class="clear"></div>
-          <!-- <hr> -->
-          <!-- <p>
-          Director: {{movie.director}}
-          <br>
-          Language: {{movie.language}}
-          <br>
-          Company: {{movie.company}}
-          <br>
-          Release: {{movie.release}}
-          <br>Genre:
-          {% for i in movie_genre.all%}
-            {% for y in i.genre.all%}
-              {{y}}
-            {% endfor %}
-          {% endfor %}
-          </p> -->
           <hr>
-          <!-- <p>
-            {{movie.description}}
-          </p> -->
-
           <div class="third">
-            <p>
+            <p id="p_movie_detail">
             Director: {{movie.director}}
             <br>
             Language: {{movie.language}}
@@ -123,7 +84,7 @@
             {% endfor %}
             </p>
             <hr>
-            <h4>Story</h4>
+            <h4 class="h4_movie_detail">Story</h4>
             {{movie.description}}
           </div>
           <div class="clear"></div>
@@ -134,5 +95,7 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
   </body>
+
 </html>

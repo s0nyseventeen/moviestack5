@@ -1,6 +1,86 @@
-1. Photo gallery(movie_detail)
-2. Trailer
-3. Different apps
-4. Genre field in models
-5. Comments(movie_detail)
-6. Big photo
+Trailer
+Photo gallery(movie_detail)
+Different apps
+Genre field in models
+Comments(movie_detail)
+Big photo
+Resolve style.css
+--------------------------------------------------------------------------------
+#listofmovies
+body {
+  background-color: #121212;
+}
+#logo_color {
+    color: #7952b3;
+}
+.table_listofmovies {
+  border-collapse: separate;
+  border-spacing: 50px 0;
+  padding-top: 10px;
+  background: #eeeeee;
+}
+
+.td_listofmovies {
+  padding-top: 10px;
+}
+
+.h4_listofmovies {
+  background: #eeeeee;
+  padding-left: 5px;
+  padding-top: 5px;
+  padding-bottom: 0px;
+  text-align: left;
+}
+
+#description_listofmovies {
+  text-align: center;
+}
+
+.content_listofmovies {
+  background: #eeeeee;
+}
+
+.container {
+  width: auto;
+  background: #eeeeee;
+}
+
+#movie_detail
+body {
+  background-color: #c2c2be;
+}
+div {
+  margin-top: 2px;
+  text-align: center;
+}
+.container {
+  width: auto;
+  background: #eeeeee;
+}
+.first {
+  height: auto;
+  background-color: #eeeeee;
+  text-align: left;
+  width: auto;
+  float: left;
+}
+.third {
+  width: auto;
+  background: #eeeeee;
+  height: 250px;
+  float: left;
+  text-align: left;
+}
+.clear {
+  clear: both;
+}
+h4 {
+  text-align: left;
+}
+p {
+  padding-top: 3px;
+  text-align: left;
+}
+#logo_color {
+  color: #7952b3;
+}

@@ -36,7 +36,7 @@ class Movie(models.Model):
 		return self.title
 
 	def get_summary(self):
-		return self.description[:50] + '...'
+		return self.description[:100] + '...'
 
 
 class Director(models.Model):
