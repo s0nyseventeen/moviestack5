@@ -3,37 +3,33 @@
   {%block extra_head%}
     <link rel="stylesheet" href="{%static 'css/style.css'%}">
   {%endblock%}
+  {%block title%}<title>listofmovies</title>{%endblock%}
+
   {%block content%}
 
   <h4>Top Rated Movies</h4>
 
 
-  <div class="container">
-
     <table>
       <th id="nick">Title&Rank</th>
-      <th>Release</th>
       <th>Genre</th>
+      <th id="desc">Short description</th>
 
       {%for i in movies%}
         {%for y in i.genre.all%}
       <tbody>
         <tr>
           <td>
-            <img id="tit" src="{{i.poster.url}}" alt="" width="110" height="150"/><a href="#">{{i.title}}</a>
-          </td>
-          <td class="items">{{i.release}}</td>
-          <td class="items">{{y}}</td>
-        </tr>
 
+            <img id="tit" src="{{i.poster.url}}" alt="" width="110" height="150"/><a href="{%url 'moviedetails' i.id%}">{{i.title}}({{i.release}})</a>
+          </td>
+          <td class="items">{{y}}</td>
+          <td class="itemsqq">{{i.get_summary}}</td>
+        </tr>
       </tbody>
       {%endfor%}
     {%endfor%}
     </table>
-
-  </div>
-
-
 
 
 {%endblock%}

@@ -13,26 +13,30 @@ class Genre(models.Model):
 
 class Movie(models.Model):
 
-    title = models.CharField(max_length=200)
-    release = models.IntegerField(default=0)
-    poster = models.ImageField(upload_to='listofmovies/')
-    company = models.CharField(max_length=200, help_text='Enter a company of movie')
-    language = models.CharField(max_length=200, help_text='Choose a language of the movie')
-    genre = models.ManyToManyField(Genre, help_text='Choose a genre of the movie', null=True, blank=True)
-    director = models.ForeignKey('Director', on_delete=models.SET_NULL, null=True)
+	title = models.CharField(max_length=200)
+	release = models.IntegerField(default=0)
+	poster = models.ImageField(upload_to='listofmovies/')
+	company = models.CharField(max_length=200, help_text='Enter a company of movie')
+	description = models.TextField(help_text='Enter a short description', max_length=1000, null=True)
+	language = models.CharField(max_length=200, help_text='Choose a language of the movie')
+	genre = models.ManyToManyField(Genre, help_text='Choose a genre of the movie')
+	director = models.ForeignKey('Director', on_delete=models.SET_NULL, null=True)
 
-    rating_list = (
-    		('1', '*'),
-    		('2', '**'),
-    		('3', '***'),
-    		('4', '****'),
-    		('5', '*****'),
-    	)
+	rating_list = (
+		('1', '*'),
+		('2', '**'),
+		('3', '***'),
+		('4', '****'),
+		('5', '*****'),
+	)
 
-    rating = models.CharField(max_length=100, choices=rating_list, help_text='rating of a movie')
+	rating = models.CharField(max_length=100, choices=rating_list, help_text='rating of a movie')
 
-    def __str__(self):
-        return self.title
+	def __str__(self):
+		return self.title
+
+	def get_summary(self):
+		return self.description[:50] + '...'
 
 
 class Director(models.Model):
