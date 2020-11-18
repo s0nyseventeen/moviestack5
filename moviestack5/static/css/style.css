@@ -53,7 +53,7 @@
 .third {
   width: auto;
   background: #eeeeee;
-  height: 250px;
+  /* height: 700px; */
   float: left;
   text-align: left;
 }
@@ -68,5 +68,9 @@
 }
 
 .h4_movie_detail {
+  text-align: left;
+}
+
+.description_movie_detail {
   text-align: left;
 }

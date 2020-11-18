@@ -21,6 +21,7 @@ class Movie(models.Model):
 	language = models.CharField(max_length=200, help_text='Choose a language of the movie')
 	genre = models.ManyToManyField(Genre, help_text='Choose a genre of the movie')
 	director = models.ForeignKey('Director', on_delete=models.SET_NULL, null=True)
+	big_photo = models.ImageField(upload_to='listofmovies/', null=True)
 
 	rating_list = (
 		('1', '*'),
