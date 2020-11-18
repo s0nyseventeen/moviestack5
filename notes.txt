@@ -3,4 +3,5 @@ Photo gallery(movie_detail)
 Different apps
 Genre field in models
 Comments(movie_detail)
+href in listofmovies
 --------------------------------------------------------------------------------

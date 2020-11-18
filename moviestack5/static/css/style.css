@@ -23,6 +23,7 @@
 
 .td_listofmovies {
   padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .h4_listofmovies {
@@ -39,6 +40,13 @@
 
 .content_listofmovies {
   background: #eeeeee;
+}
+
+.footer_listofmovies {
+  text-align: center;
+  height: 50px;
+  padding-top: 10px;
+  color: white;
 }
 
 /* movie_detail */
@@ -73,4 +81,11 @@
 
 .description_movie_detail {
   text-align: left;
+}
+
+.footer_movie_detail {
+  text-align: center;
+  height: 50px;
+  padding-top: 10px;
+  color: #121212;
 }
