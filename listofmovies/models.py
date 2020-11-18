@@ -2,7 +2,6 @@ from django.db import models
 from django.conf import settings
 
 
-
 class Genre(models.Model):
 
 	name = models.CharField(max_length=200, help_text='Enter a movie genre')
@@ -39,14 +38,16 @@ class Movie(models.Model):
 	def get_summary(self):
 		return self.description[:100] + '...'
 
+	def show_genre(self):
+		return ', '.join([ genre.name for genre in self.genre.all()[:3]] )
+
+	show_genre.short_description = 'Genre'
+
 
 class Director(models.Model):
 
 	first_name = models.CharField(max_length=200)
 	last_name = models.CharField(max_length=200)
-
-	# def get_absolute_url(self):
-	# 	return reverse('director-detail', args=[str(self.id)])
 
 	def __str__(self):
 		return f'{self.first_name} {self.last_name}'
