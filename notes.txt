@@ -5,5 +5,4 @@ Genre field in models
 Comments(movie_detail)
 href in listofmovies
 navbar fixed
-admin
 --------------------------------------------------------------------------------

@@ -4,9 +4,7 @@ from .models import Movie, Genre, Director
 admin.site.register(Genre)
 
 
-class DirectorInline(admin.TabularInline):
 
-    model = Director
 
 
 @admin.register(Director)
@@ -20,4 +18,4 @@ class MovieAdmin(admin.ModelAdmin):
 
     list_display = ('title', 'director', 'show_genre', 'release')
     list_filter = ('release', 'genre')
-    inlines = [DirectorInline]
+    

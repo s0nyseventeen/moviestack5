@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="{%static '/css/style.css'%}">
-    <title>listofmovies</title>
+    <title>genres</title>
     <style media="screen">
       body {
         background-color: #121212;
@@ -29,7 +29,7 @@
             <ul class="navbar-nav">
               <li class="nav-item dropdown"><a class="nav-link text-light text-uppercase font-weigth-bold px-3 dropdown-toggle" data-toggle='dropdown' href="#">Categories</a>
                 <div class="dropdown-menu">
-                  <a class="dropdown-item" href="{% url 'genrelist' %}">Genre</a>
+                  <a class="dropdown-item" href="#">Genre</a>
                   <a class="dropdown-item" href="#">Year</a>
                   <a class="dropdown-item" href="#">Rating</a>
                 </div>
@@ -49,33 +49,10 @@
         </nav>
         <div class="container">
           <div class="content_listofmovies">
-          <h4 class="h4_listofmovies">Top Rated Movies</h4>
-          <hr>
-            <table class="table_listofmovies">
-              <th id="nick">Title&Rank</th>
-              <th>Genre</th>
-              <th id="description_listofmovies">Short description</th>
-              {%for i in movies%}
-                {%for y in i.genre.all%}
-              <tbody>
-                <tr>
-                  <td class="td_listofmovies">
-                    <a href="{%url 'moviedetails' i.id%}">
-                      {{i.title}}
-                    </a>
-                    <br>
-                    <img src="{{i.poster.url}}" alt="" width="110" height="150"/> {{i.release}}
-                    <br>
-                  </td>
-                  <td class="td_listofmovies">{{y}}</td>
-                  <td class="td_listofmovies">{{i.get_summary}}</td>
-                  {%endfor%}
-                {%endfor%}
+            {% for genre in genres.all %}
+            <a href="#">{{genre}}</a>
+            {% endfor %}
 
-                </tr>
-              </tbody>
-
-            </table>
           </div>
         </div>
 
