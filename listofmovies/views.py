@@ -23,3 +23,22 @@ def movie_details(request, movie_id):
         'listofmovies/movie_detail.html',
         {'movie': movie, 'movie_genre': movie_genre}
     )
+
+def list_of_genres(request):
+    genres = Genre.objects.all()
+
+    return render(
+        request,
+        'listofmovies/genres.html',
+        context = {'genres': genres}
+    )
+
+def genre_details(request, genre_id):
+    genre = get_object_or_404(Genre, pk=genre_id)
+    # genre = Movie.objects.all()
+
+    return render(
+        request,
+        'listofmovies/genre_detail.html',
+        {'genre': genre}
+    )

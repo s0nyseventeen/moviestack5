@@ -5,4 +5,7 @@ Genre field in models
 Comments(movie_detail)
 href in listofmovies
 navbar fixed
+dropdown menu
 --------------------------------------------------------------------------------
+genre.movei_set.all
+200 x 133px
