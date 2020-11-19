@@ -18,10 +18,8 @@ from django.urls import path, include
 import listofmovies.views
 from django.conf.urls.static import static
 from django.conf import settings
-import genre.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('listofmovies.urls')),
-    path('', include('genre.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

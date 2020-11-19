@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from .models import Movie, Director, Genre
 
 def home(request):
-    return render(request, 'homepage.html')
+    return render(request, 'listofmovies/homepage.html')
 
 def list_of_movies(request):
     movies = Movie.objects.all()
@@ -10,7 +10,7 @@ def list_of_movies(request):
 
     return render(
         request,
-        'listofmovies.html',
+        'listofmovies/listofmovies.html',
         context = {'movies': movies, 'directors': directors}
     )
 
@@ -20,6 +20,6 @@ def movie_details(request, movie_id):
 
     return render(
         request,
-        'movie_detail.html',
+        'listofmovies/movie_detail.html',
         {'movie': movie, 'movie_genre': movie_genre}
     )
