@@ -1,11 +1,6 @@
 Trailer(FileField in models)
 Photo gallery(movie_detail)
 Different apps
-Genre field in models
 Comments(movie_detail)
-href in listofmovies
-navbar fixed
-dropdown menu
+
 --------------------------------------------------------------------------------
-genre.movei_set.all
-200 x 133px

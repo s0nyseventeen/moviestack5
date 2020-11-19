@@ -5,6 +5,10 @@ from django.conf import settings
 class Genre(models.Model):
 
 	name = models.CharField(max_length=200, help_text='Enter a movie genre')
+	image = models.ImageField(upload_to='listofmovies/', null=True)
+
+	class Meta:
+		ordering = ['name']
 
 	def __str__(self):
 		return self.name
