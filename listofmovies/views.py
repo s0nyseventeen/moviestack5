@@ -21,6 +21,7 @@ def movie_details(request, movie_id):
     movie_genre = Movie.objects.all()
     genres = Genre.objects.all()
 
+
     return render(
         request,
         'listofmovies/movie_detail.html',
